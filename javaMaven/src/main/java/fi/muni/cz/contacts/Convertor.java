@@ -97,6 +97,33 @@ public class Convertor {
                 
                 info.appendChild(address);
             }
+            
+            List<Email> emailsObj = new ArrayList(contactInfo.getEmails());
+            if (!emailsObj.isEmpty()) {
+                Element emails = doc.createElement("emails");
+                
+                for (int j = 0; j < emailsObj.size(); j++) {
+                    Element email = doc.createElement("email");
+                    email.setTextContent(emailsObj.get(j).toString());
+                    emails.appendChild(email);
+                }
+                
+                info.appendChild(emails);
+            }
+            
+            List<Phone> phonesObj = new ArrayList(contactInfo.getPhones());
+            if (!phonesObj.isEmpty()) {
+                Element phones = doc. createElement("phones");
+                
+                for (int k = 0; k < phonesObj.size(); k++) {
+                    Element phone = doc.createElement("phone");
+                    phone.setTextContent(phonesObj.get(k).toString());
+                    phones.appendChild(phone);
+                }
+                
+                info.appendChild(phones);
+            }
+            
             contact.appendChild(info);
             contacts.appendChild(contact);
         }
