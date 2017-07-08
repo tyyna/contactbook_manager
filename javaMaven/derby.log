@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Mon Jul 03 14:31:51 CEST 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-086f-7e7c-000002bad510 
-on database directory /home/teena/ContactBookDatabase with class loader sun.misc.Launcher$AppClassLoader@3d4eac69 
-Loaded from file:/home/teena/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Sat Jul 08 15:21:02 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-225c-5475-0000034bf5d0 
+on database directory C:\Users\Teena\ContactBookDatabase with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/Teena/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_131-8u131-b11-0ubuntu1.16.04.2-b11
-user.dir=/media/teena/Data/School/PV168/final/javaMaven
-os.name=Linux
+java.runtime.version=1.8.0_101-b13
+user.dir=D:\School\PB138\contactBook\javaMaven
+os.name=Windows 10
 os.arch=amd64
-os.version=4.4.0-83-generic
+os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
