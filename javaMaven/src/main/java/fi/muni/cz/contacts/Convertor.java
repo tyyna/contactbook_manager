@@ -144,26 +144,16 @@ public class Convertor {
         manager = new ContactManagerImpl(ds);       
     }
 
-    public void serializetoXML(URI output)
-            throws IOException, TransformerConfigurationException, TransformerException {
+    public void serializetoXML(File output)
+            throws IOException, TransformerConfigurationException, TransformerException,
+                    SQLException {
 
         TransformerFactory factory = TransformerFactory.newInstance();
         Transformer transformer = factory.newTransformer();
-        DOMSource source = new DOMSource(doc);
+        DOMSource source = new DOMSource(createElement());
                 
-        StreamResult result = new StreamResult(output.toString());
+        StreamResult result = new StreamResult(output.toURI().toString());
         transformer.transform(source, result);
-            
-            
-        transformer.transform(
-            source, 
-            new StreamResult(new File("contacts.xml")));
-    }
-
-    public void serializetoXML(File output) throws IOException,
-            TransformerException {
-        serializetoXML(output.toURI());
-        System.out.println(output.toURI().toString());
     }
 
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, TransformerException {
@@ -178,12 +168,8 @@ public class Convertor {
         }
         
         Convertor convertor = new Convertor(ds);
-        
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer trans = tf.newTransformer();
 
         try {            
-            trans.transform(new DOMSource(convertor.createElement()), new StreamResult(System.out));
             convertor.createElement();
             convertor.serializetoXML(output);
         } catch (SQLException ex) {
