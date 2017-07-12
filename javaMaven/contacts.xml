@@ -1,1 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?><contacts><contact cid="1"><name>Jan</name><surname>Novák</surname><info><address><street>Skorkovského</street><number>několik</number><city>Brno</city></address><emails><email>jan.novak@gmail.com</email></emails><phones><phone>123456789</phone></phones></info></contact></contacts>
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+  <contact cid="101">
+    <name>Lucie</name>
+    <surname>Dvořáková</surname>
+    <info>
+      <address>
+        <street>Mučednická</street>
+        <number>37</number>
+        <city>Kardašova Řečice</city>
+      </address>
+      <emails>
+        <email>luciedvorakova@gmail.com</email>
+      </emails>
+      <phones>
+        <phone>737420698</phone>
+      </phones>
+    </info>
+  </contact>
+  <contact cid="1">
+    <name>Jan</name>
+    <surname>Novák</surname>
+    <info>
+      <address>
+        <street>Skorkovského</street>
+        <number>několik</number>
+        <city>Brno</city>
+      </address>
+      <emails>
+        <email>jan.novak@gmail.com</email>
+      </emails>
+      <phones>
+        <phone>123456789</phone>
+      </phones>
+    </info></contact><contact cid="102"><name>Hildegarda</name><surname>Mastná</surname><info><address><street>Suchozemská</street><number>317</number><city>Řehořinky</city></address><emails><email>mastnahildegarda@seznam.cz</email></emails></info></contact></contacts>

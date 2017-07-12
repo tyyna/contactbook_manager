@@ -1,6 +1,6 @@
-﻿- převod databáze kontaktů z SQL do XML
+﻿o- převod databáze kontaktů z SQL do XML
 
-- použijte existující formát nebo definujte schéma
+o- použijte existující formát nebo definujte schéma
 
 - převeďte XML data na webovou stránku (krátký přehled, podrobné informace)
 

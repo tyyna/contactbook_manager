@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<contacts>
-  <contact cid="1">
+<contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="contacts.xsd">
+  <contact>
     <name>Jan</name>
-    <surname>Novák</surname>
     <info>
       <address>
         <street>Skorkovského</street>
         <number>několik</number>
-        <city>Brno</city>
       </address>
       <emails>
-        <email>jan.novak@gmail.com</email>
-        <email>novak.jan@gmail.com</email>
+        <email>jan.novakgmail.com</email>
+        <email>novak.jan@</email>
       </emails>
       <phones>
-        <phone>123456789</phone>
+        <phone>12345678</phone>
       </phones>
     </info>
   </contact>
