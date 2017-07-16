@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Contacts</title>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="stylesheet" href="contacts.css" type="text/css" media="screen" />
+    <script src="contacts.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1 id="title">Contact Book</h1>
+
+    <!--leva polovina: tabulka se jmeny a prijmenimi-->
+    <div id="table" style="float:left; width:50%">
+        <!--TODO-->
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+            <tr class="contact" id="1">
+                <td class="name">Jan</td>
+                <td class="surname">Novák</td>
+            </tr>
+            <tr class="contact" id="2">
+                <td class="name">Pavel</td>
+                <td class="surname">Novotný</td>
+            </tr>
+            <tr class="contact" id="3">
+                <td class="name">Kamila</td>
+                <td class="surname">Nová</td>
+            </tr>
+        </table>
+
+    </div>
+    <!--prava polovina: kontaktní informace ke zvolenému kontaktu-->
+    <div id="contactInfo" style="float:right; width:50%">
+        <!--TODO-->
+        <div class="info" id="1">
+            <h2>Jan Novák</h2>
+            <h3>Address</h3>
+            <p>Skorkovského</p>
+            <p>několik</p>
+            <p>Brno</p>
+            <h3>Emails</h3>
+            <ul class="emails">
+                <li>jan.novak@gmail.com</li>
+                <li>novak.jan@gmail.com</li>
+            </ul>
+            <h3>Phones</h3>
+            <ul>
+                <li>123456789</li>
+            </ul>
+        </div>
+        <div class="info" id="2">
+            <h2>Pavel Novotný</h2>
+            <h3>Address</h3>
+            <p>Kaštanová</p>
+            <p>3</p>
+            <p>Brno</p>
+            <h3>Emails</h3>
+            <ul class="emails">
+                <li>pavel.novotny@gmail.com</li>
+                <li>novotny.pavel@gmail.com</li>
+            </ul>
+            <h3>Phones</h3>
+            <ul>
+                <li>987645321</li>
+            </ul>
+        </div>
+        <div class="info" id="3">
+            <h2>Kamila Nová</h2>
+        </div>
+
+    </div>
+
+</body>
+</html>

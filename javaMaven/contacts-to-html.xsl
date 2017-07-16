@@ -9,14 +9,7 @@
                 indent="yes"
     />
 
-    <!--
-     Please complete the stylesheet.
-     For instructions, read the comments in XSLTProcesor.java
-     If you need to change the root element or the xsl:output,
-     you can do it.
-    -->
     <xsl:template match="contacts">
-        <!-- You will probably need to have this template completed -->
 
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
@@ -32,7 +25,7 @@
               <table>
                 <tr>
                   <th>Name</th>
-                  <th>Surame</th>
+                  <th>Surname</th>
                 </tr>
                 <xsl:apply-templates select="contact"/>
               </table>
