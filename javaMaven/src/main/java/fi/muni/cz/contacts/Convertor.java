@@ -57,6 +57,8 @@ public class Convertor {
     
     public Element createElement() throws SQLException {
         Element contacts = doc.createElement("contacts");
+        contacts.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+        contacts.setAttribute("xsi:noNamespaceSchemaLocation", "contacts.xsd");
         
         List<Person> persons = new ArrayList(manager.getAllPersons());
         
@@ -156,10 +158,10 @@ public class Convertor {
         transformer.transform(source, result);
     }
 
-    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, TransformerException {
+    public void convertToXML(DataSource ds) throws IOException, SAXException, ParserConfigurationException, TransformerException {
 
         output = new File("contacts.xml");
-        DataSource ds = DBUtils.prepareEmbeddedDatabaseHome();
+        //DataSource ds = DBUtils.prepareEmbeddedDatabaseHome();
         try {            
             DBUtils.executeSqlScript(ds, ContactManager.class.getResource("createTables.sql"));
         
@@ -167,11 +169,20 @@ public class Convertor {
             //ignore - tables already created
         }
         
-        Convertor convertor = new Convertor(ds);
+        //Convertor convertor = new Convertor(ds);
+        
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        try {
+            doc = builder.parse(output.toURI().toString());
+        } catch(Exception e) {
+            doc = builder.newDocument();
+        }
+        manager = new ContactManagerImpl(ds);  
 
         try {            
-            convertor.createElement();
-            convertor.serializetoXML(output);
+            createElement();
+            serializetoXML(output);
         } catch (SQLException ex) {
             Logger.getLogger(Convertor.class.getName()).log(Level.SEVERE, "Error in createElement.", ex.getMessage());
         }

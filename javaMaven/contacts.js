@@ -1,4 +1,4 @@
-function main() {
+/*function main() {
     $('.info').hide();
 
     $('tr #contact').click(function () {
@@ -8,6 +8,14 @@ function main() {
     });
 
 }
+*/
 
+$(document).ready(function () {
+    $('.info').hide();
 
-$(document).ready(main);
+    $('tr #contact').click(function () {
+        var cid = $(this).id;
+        $('.info').hide();
+        $('#cid .info').show();
+    });
+});
