@@ -136,6 +136,8 @@ public class ContactsWindowForm extends javax.swing.JFrame {
         jMenuFile = new javax.swing.JMenu();
         jMenuItemRefresh = new javax.swing.JMenuItem();
         jMenuItemClose = new javax.swing.JMenuItem();
+        jMenuItemXML = new javax.swing.JMenuItem();
+        jMenuItemHTML = new javax.swing.JMenuItem();
         jMenuEdit = new javax.swing.JMenu();
         jMenuItemAdd = new javax.swing.JMenuItem();
         jMenuItemRemove = new javax.swing.JMenuItem();
@@ -248,6 +250,22 @@ public class ContactsWindowForm extends javax.swing.JFrame {
         });
         jMenuFile.add(jMenuItemClose);
 
+        jMenuItemXML.setText(bundle.getString("convert.xml")); // NOI18N
+        jMenuItemXML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemXMLActionPerformed(evt);
+            }
+        });
+        jMenuFile.add(jMenuItemXML);
+
+        jMenuItemHTML.setText(bundle.getString("convert.html")); // NOI18N
+        jMenuItemHTML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemHTMLActionPerformed(evt);
+            }
+        });
+        jMenuFile.add(jMenuItemHTML);
+
         jMenuBar.add(jMenuFile);
 
         jMenuEdit.setText(bundle.getString("edit")); // NOI18N
@@ -357,6 +375,21 @@ public class ContactsWindowForm extends javax.swing.JFrame {
     private void jMenuItemSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSelectActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemSelectActionPerformed
+
+    private void jMenuItemXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemXMLActionPerformed
+        // TODO add your handling code here:
+        //TODO: log
+        //TODO: worker ?
+        //TODO: run convertor
+    }//GEN-LAST:event_jMenuItemXMLActionPerformed
+
+    private void jMenuItemHTMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHTMLActionPerformed
+        // TODO add your handling code here:
+        //TODO: log
+        //TODO: worker ?
+        //TODO: run convertor
+        //TODO: run XSLT processor
+    }//GEN-LAST:event_jMenuItemHTMLActionPerformed
 
     //##################### WORKERS #####################################
     
@@ -586,9 +619,11 @@ public class ContactsWindowForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuFile;
     private javax.swing.JMenuItem jMenuItemAdd;
     private javax.swing.JMenuItem jMenuItemClose;
+    private javax.swing.JMenuItem jMenuItemHTML;
     private javax.swing.JMenuItem jMenuItemRefresh;
     private javax.swing.JMenuItem jMenuItemRemove;
     private javax.swing.JMenuItem jMenuItemSelect;
+    private javax.swing.JMenuItem jMenuItemXML;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableContacts;
     private javax.swing.JTextField jTextFieldName;

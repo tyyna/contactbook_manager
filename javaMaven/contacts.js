@@ -1,21 +1,14 @@
-/*function main() {
-    $('.info').hide();
-
-    $('tr #contact').click(function () {
-        var cid = $(this).id;
-        $('.info').hide();
-        $('#cid .info').show();
-    });
-
-}
-*/
-
 $(document).ready(function () {
     $('.info').hide();
 
-    $('tr #contact').click(function () {
-        var cid = $(this).id;
+    $('.contact').click(function () {
+        $('.contact').css('color', 'black');
+        $('.contact').css('background', 'none');
         $('.info').hide();
-        $('#cid .info').show();
+
+        var cid = ($(this).attr("class").split(' ')[1]);
+        $(this).css('color', 'white');
+        $(this).css('background', '#3c678d');
+        $('.' + cid).show();
     });
 });

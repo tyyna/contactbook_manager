@@ -12,3 +12,17 @@
     width: 50%;
     float: right;
 }
+
+.contact {
+    transition: all .5s ease;
+}
+
+tr th {
+    font-size: 22px;
+    min-width: 100px;
+}
+
+.contact td {
+    border: 1px solid #3c678d;
+    padding: 3px 5px;
+}
