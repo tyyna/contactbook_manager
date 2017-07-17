@@ -23,10 +23,10 @@ public class XSLTProcesor {
         TransformerFactory tf = TransformerFactory.newInstance();
         
         Transformer xsltProc = tf.newTransformer(
-                new StreamSource(new File("contacts-to-html.xsl")));
+                new StreamSource(new File("contacts_to_html.xsl")));
         
         xsltProc.transform(
-                new StreamSource(new File("contacts_sample.xml")), 
+                new StreamSource(new File("contacts.xml")), 
                 new StreamResult(new File("contacts.html")));
     }
 }

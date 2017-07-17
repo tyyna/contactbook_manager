@@ -523,6 +523,24 @@ public class ContactsWindowForm extends javax.swing.JFrame {
         
     }
     
+    private class ConvertToXMLWorker extends SwingWorker {
+        //TODO!
+        @Override
+        protected Object doInBackground() throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        
+    }
+    
+    private class ConvertToHTMLWorker extends SwingWorker {
+        //TODO!
+        @Override
+        protected Object doInBackground() throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        
+    }
+    
     private class RefreshWorker extends SwingWorker {
 
         Collection<Person> persons = null;
