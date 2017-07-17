@@ -51,11 +51,11 @@ import org.xml.sax.SAXException;
  */
 public class Convertor {
     
-    private ContactManagerImpl manager;
-    private Document doc;
+   // private static ContactManagerImpl manager;
+    private static Document doc;
     private static File output;
     
-    public Element createElement() throws SQLException {
+    public static Element createElement(ContactManager manager) throws SQLException {
         Element contacts = doc.createElement("contacts");
         contacts.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
         contacts.setAttribute("xsi:noNamespaceSchemaLocation", "contacts.xsd");
@@ -133,41 +133,28 @@ public class Convertor {
         return contacts;
     }
 
-    private Convertor(DataSource ds) throws SAXException, ParserConfigurationException,
-            IOException {
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        try {
-            doc = builder.parse(output.toURI().toString());
-        } catch(Exception e) {
-            doc = builder.newDocument();
-        }
-        manager = new ContactManagerImpl(ds);       
-    }
-
-    public void serializetoXML(File output)
+    public static void serializetoXML(ContactManager manager, File output)
             throws IOException, TransformerConfigurationException, TransformerException,
                     SQLException {
 
         TransformerFactory factory = TransformerFactory.newInstance();
         Transformer transformer = factory.newTransformer();
-        DOMSource source = new DOMSource(createElement());
+        DOMSource source = new DOMSource(createElement(manager));
                 
         StreamResult result = new StreamResult(output.toURI().toString());
         transformer.transform(source, result);
     }
 
-    public void convertToXML(DataSource ds) throws IOException, SAXException, ParserConfigurationException, TransformerException {
+    public static void convertToXML(ContactManager manager) throws IOException, SAXException, ParserConfigurationException, TransformerException {
 
         output = new File("contacts.xml");
         //DataSource ds = DBUtils.prepareEmbeddedDatabaseHome();
-        try {            
+        /*try {            
             DBUtils.executeSqlScript(ds, ContactManager.class.getResource("createTables.sql"));
         
         } catch (SQLException ex) {
             //ignore - tables already created
-        }
+        }*/
         
         //Convertor convertor = new Convertor(ds);
         
@@ -177,12 +164,11 @@ public class Convertor {
             doc = builder.parse(output.toURI().toString());
         } catch(Exception e) {
             doc = builder.newDocument();
-        }
-        manager = new ContactManagerImpl(ds);  
+        }  
 
         try {            
-            createElement();
-            serializetoXML(output);
+            createElement(manager);
+            serializetoXML(manager, output);
         } catch (SQLException ex) {
             Logger.getLogger(Convertor.class.getName()).log(Level.SEVERE, "Error in createElement.", ex.getMessage());
         }

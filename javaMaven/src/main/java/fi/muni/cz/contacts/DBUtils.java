@@ -76,7 +76,7 @@ public class DBUtils {
                 }
             }
         } finally {
-            conn.rollback();
+            //conn.rollback();
             conn.close();
         }
 }

@@ -33,13 +33,15 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
+import fi.muni.cz.contacts.Convertor;
+import fi.muni.cz.contacts.XSLTProcesor;
 
 /**
  *
  * @author teena
  */
 public class ContactsWindowForm extends javax.swing.JFrame {
-
+    
     private ContactManager manager;
     private Collection<Person> originalPeople;
     private Logger logger = Logger.getLogger("ContactsWindowLogger");
@@ -102,6 +104,10 @@ public class ContactsWindowForm extends javax.swing.JFrame {
         
         } catch (SQLException ex) {
             //ignore - tables already created
+        }
+        catch (NullPointerException e) {
+            System.out.println("npe happened" + e.getMessage());
+            System.out.println(ds.equals(null));
         }
         
         EventQueue.invokeLater(new Runnable() {
@@ -381,6 +387,8 @@ public class ContactsWindowForm extends javax.swing.JFrame {
         //TODO: log
         //TODO: worker ?
         //TODO: run convertor
+        ConvertToXMLWorker worker= new ConvertToXMLWorker();
+        worker.execute();
     }//GEN-LAST:event_jMenuItemXMLActionPerformed
 
     private void jMenuItemHTMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHTMLActionPerformed
@@ -389,6 +397,8 @@ public class ContactsWindowForm extends javax.swing.JFrame {
         //TODO: worker ?
         //TODO: run convertor
         //TODO: run XSLT processor
+        ConvertToHTMLWorker worker= new ConvertToHTMLWorker();
+        worker.execute();
     }//GEN-LAST:event_jMenuItemHTMLActionPerformed
 
     //##################### WORKERS #####################################
@@ -517,28 +527,7 @@ public class ContactsWindowForm extends javax.swing.JFrame {
                     logger.log(Level.INFO, "Contact selected.");
                 });
             }
-        }
-        
-        
-        
-    }
-    
-    private class ConvertToXMLWorker extends SwingWorker {
-        //TODO!
-        @Override
-        protected Object doInBackground() throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-        
-    }
-    
-    private class ConvertToHTMLWorker extends SwingWorker {
-        //TODO!
-        @Override
-        protected Object doInBackground() throws Exception {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-        
+        }       
     }
     
     private class RefreshWorker extends SwingWorker {
@@ -572,7 +561,27 @@ public class ContactsWindowForm extends javax.swing.JFrame {
                 });
             }
         }
+    }
+    
+    
+    private class ConvertToXMLWorker extends SwingWorker {
+        //TODO!
+        @Override
+        protected Object doInBackground() throws Exception {
+            Convertor.convertToXML(manager);
+            return null;
+        }
         
+    }
+    
+    private class ConvertToHTMLWorker extends SwingWorker {
+        //TODO!
+        @Override
+        protected Object doInBackground() throws Exception {
+            Convertor.convertToXML(manager);
+            XSLTProcesor.convertToHTML();
+            return null;
+        }
         
     }
     
