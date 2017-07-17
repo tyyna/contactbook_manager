@@ -17,8 +17,8 @@
               <title>Contacts</title>
               <!--<meta http-equiv="Content-Style-Type" content="text/css"/>-->
               <link rel="stylesheet" href="contacts.css" type="text/css" />
-              <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
-              <script src="contacts.js" type="text/javascript"></script>
+              <script src="jquery-3.2.1.min.js" type="text/javascript">//</script>
+              <script src="contacts.js" type="text/javascript">//</script>
             </head>
             <body>
               <h1 id="title">Contact Book</h1>
@@ -53,11 +53,15 @@
     </xsl:template>
 
     <xsl:template match="info">
-      <xsl:variable name='cid'>
-          <xsl:value-of select='@cid'/>
+      <xsl:variable name='iid'>
+          <xsl:value-of select='../@cid'/>
       </xsl:variable>
-      <div class="info {$cid}">
-          <h2 class="name"><xsl:value-of select="name"/> <xsl:value-of select="surname"/></h2>
+      <div class="info {$iid}">
+          <h2 class="name">
+            <xsl:value-of select="../name"/>
+            <xsl:text>&#xA0;</xsl:text>
+            <xsl:value-of select="../surname"/>
+          </h2>
           <xsl:apply-templates select="address"/>
           <xsl:apply-templates select="emails"/>
           <xsl:apply-templates select="phones"/>
