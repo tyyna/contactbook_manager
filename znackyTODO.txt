@@ -1,9 +1,0 @@
-﻿o- převod databáze kontaktů z SQL do XML
-
-o- použijte existující formát nebo definujte schéma
-
-- převeďte XML data na webovou stránku (krátký přehled, podrobné informace)
-
-
-citace:
-- http://biercoff.com/nice-and-simple-converter-of-java-resultset-into-jsonarray-or-xml/

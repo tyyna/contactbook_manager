@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: fi.muni.cz.contacts.test.ContactInformationImplTest
--------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.739 sec

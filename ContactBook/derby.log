@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Jul 21 01:38:03 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-625d-8962-000002d69188 
+on database directory /home/teena/ContactBook/ContactBookDatabase with class loader sun.misc.Launcher$AppClassLoader@677327b6 
+Loaded from file:/home/teena/Desktop/ContactBook/ContactBook.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-8u131-b11-0ubuntu1.16.04.2-b11
+user.dir=/home/teena/Desktop/ContactBook
+os.name=Linux
+os.arch=amd64
+os.version=4.4.0-83-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
